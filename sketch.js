@@ -59,17 +59,19 @@ function draw() {
 
 // ---------- MODELO BATCH ----------
 function updateModel() {
+
+  // ⛔ Si el sustrato se acabó, detener TODO
+  if (S <= 0) {
+    S = 0;
+    running = false;
+    return; // ← ESTO es lo que faltaba
+  }
+
   let mu = muMax * S / (Ks + S);
 
   X += mu * X * dt;
   S -= (1.0 / Yxs) * mu * X * dt;
   P += Ypx * mu * X * dt;
-
-  // Evitar valores negativos
-  if (S <= 0) {
-    S = 0;
-    running = false;   //  Detiene la simulación
-  }
 
   Xv.push(X);
   Sv.push(S);
@@ -77,6 +79,7 @@ function updateModel() {
 
   angle += 0.1;
 }
+
 
 // ---------- REACTOR ----------
 function drawReactor() {
