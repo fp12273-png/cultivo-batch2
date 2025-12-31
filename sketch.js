@@ -65,6 +65,12 @@ function updateModel() {
   S -= (1.0 / Yxs) * mu * X * dt;
   P += Ypx * mu * X * dt;
 
+  // Evitar valores negativos
+  if (S <= 0) {
+    S = 0;
+    running = false;   //  Detiene la simulación
+  }
+
   Xv.push(X);
   Sv.push(S);
   Pv.push(P);
