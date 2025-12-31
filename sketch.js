@@ -38,11 +38,11 @@ function setup() {
   textFont("Arial");
   resetSimulation();
 
-  sliderX0 = new Slider(40, 150, 220, 0.05, 1.0, X0, "Biomasa inicial (X₀)", "g/L");
-  sliderS0 = new Slider(40, 230, 220, 5, 40, S0, "Sustrato inicial (S₀)", "g/L");
-  sliderMu = new Slider(40, 310, 220, 0.1, 0.8, muMax, "μ máx", "h⁻¹");
+  sliderX0 = new Slider(60, 150, 220, 0.05, 1.0, X0, "Biomasa inicial (X₀)", "g/L");
+  sliderS0 = new Slider(60, 230, 220, 5, 40, S0, "Sustrato inicial (S₀)", "g/L");
+  sliderMu = new Slider(60, 310, 220, 0.1, 0.8, muMax, "μ máx", "h⁻¹");
 
-  btnStart = new Button(40, 360, 100, 35, "START");
+  btnStart = new Button(60, 360, 100, 35, "START");
   btnReset = new Button(160, 360, 100, 35, "RESET");
 }
 
